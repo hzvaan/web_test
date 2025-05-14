@@ -5,44 +5,59 @@
   <title>문화도시 전주</title>
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
       height: 100%;
+      margin: 0;
       overflow: hidden;
-      font-family: 'Noto Sans KR', sans-serif;
+      font-family: 'Pretendard', sans-serif;
     }
 
-    .video-bg {
+    .video-background {
       position: fixed;
       top: 0;
       left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
       z-index: -1;
+      overflow: hidden;
     }
 
-    .overlay-text {
+    .video-background iframe {
+      width: 100vw;
+      height: 56.25vw; /* 16:9 비율 */
+      min-height: 100vh;
+      min-width: 177.77vh;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 4em;
-      font-weight: bold;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      pointer-events: none; /* 클릭 안 되게 */
+    }
+
+    .content {
+      position: relative;
       z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      transform: translateY(-50%);
+    }
+
+    .title {
+      font-size: 4rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="https://github.com/hzvaan/web_test/raw/main/composition1.mp4" type="video/mp4">
-    브라우저가 영상을 지원하지 않습니다.
-  </video>
 
-  <div class="overlay-text">
-    문화도시 전주
+  <div class="video-background">
+    <iframe 
+      src="https://www.youtube.com/embed/PFtDt0Sr9CE?autoplay=1&mute=1&loop=1&playlist=PFtDt0Sr9CE&controls=0&showinfo=0&modestbranding=1&rel=0"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
   </div>
 </body>
 </html>
