@@ -4,33 +4,21 @@
   <meta charset="UTF-8">
   <title>문화도시 전주</title>
   <style>
-    html, body {
-      height: 100%;
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       overflow: hidden;
-      font-family: 'Pretendard', sans-serif;
     }
 
-    .video-background {
+    .video-bg {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
       z-index: -1;
-      overflow: hidden;
-    }
-
-    .video-background iframe {
-      width: 100vw;
-      height: 56.25vw; /* 16:9 비율 */
-      min-height: 100vh;
-      min-width: 177.77vh;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none; /* 클릭 안 되게 */
     }
 
     .content {
@@ -38,26 +26,28 @@
       z-index: 1;
       color: white;
       text-align: center;
-      top: 40%;
+      top: 50%;
       transform: translateY(-50%);
+      font-family: 'Pretendard', sans-serif;
     }
 
-    .title {
+    h1 {
       font-size: 4rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <div class="video-background">
-    <iframe 
-      src="https://www.youtube.com/embed/PFtDt0Sr9CE?autoplay=1&mute=1&loop=1&playlist=PFtDt0Sr9CE&controls=0&showinfo=0&modestbranding=1&rel=0"
-      frameborder="0"
-      allow="autoplay; fullscreen"
-      allowfullscreen>
-    </iframe>
+  <!-- ✅ GitHub에서 호스팅 중인 영상 URL로 변경 -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="https://github.com/hzvaan/web_test/blob/b11821858a6fc294169cbd83c861d7182d4e8e68/%EC%BB%B4%ED%8F%AC%EC%A7%80%EC%85%98%201.mp4>
+    브라우저가 video 태그를 지원하지 않습니다.
+  </video>
+
+  <div class="content">
+    <h1>문화도시 전주</h1>
   </div>
+
 </body>
 </html>
