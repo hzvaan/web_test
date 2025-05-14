@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>문화도시 전주</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
+      font-family: 'Noto Sans KR', sans-serif;
     }
 
     .video-bg {
@@ -21,33 +22,27 @@
       z-index: -1;
     }
 
-    .content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
+    .overlay-text {
+      position: absolute;
       top: 50%;
-      transform: translateY(-50%);
-      font-family: 'Pretendard', sans-serif;
-    }
-
-    h1 {
-      font-size: 4rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 4em;
       font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      z-index: 1;
     }
   </style>
 </head>
 <body>
-
-  <!-- ✅ GitHub에서 호스팅 중인 영상 URL로 변경 -->
   <video class="video-bg" autoplay muted loop playsinline>
-    <source src="https://github.com/hzvaan/web_test/raw/refs/heads/main/intro.mp4" type="video/mp4">
-    브라우저가 video 태그를 지원하지 않습니다.
+    <source src="https://github.com/hzvaan/web_test/raw/main/intro.mp4" type="video/mp4">
+    브라우저가 영상을 지원하지 않습니다.
   </video>
 
-  <div class="content">
-    <h1>문화도시 전주</h1>
+  <div class="overlay-text">
+    문화도시 전주
   </div>
-
 </body>
 </html>
